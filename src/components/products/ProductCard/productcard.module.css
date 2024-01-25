@@ -1,0 +1,49 @@
+.main {
+  @apply flex flex-col justify-between w-full items-center relative my-[10%];
+
+  & > .productWrapper {
+    @apply flex flex-col gap-2 w-full items-center px-4;
+
+    & > .productImage {
+      @apply aspect-square w-full relative rounded-lg overflow-hidden;
+      transition: 0.3s ease-in-out;
+    }
+
+    & > .content {
+      @apply flex flex-col items-center;
+
+      & > .productName {
+        @apply text-caption1 font-semibold line-clamp-1;
+      }
+      & > .productPrice {
+        @apply font-bold;
+      }
+    }
+  }
+
+  & > .btnWrapper {
+    @apply opacity-0;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  transition: 0.3s ease-in-out;
+  @apply bg-pink-100 rounded-lg;
+}
+.main:hover::before {
+  height: 65%;
+  z-index: -1;
+}
+.main:hover .productImage {
+  @apply -translate-y-[10%];
+}
+
+.main:hover .btnWrapper {
+  @apply opacity-100 translate-y-1/2;
+}

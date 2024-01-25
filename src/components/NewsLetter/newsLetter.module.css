@@ -1,0 +1,19 @@
+.newsLetterHeadingWrapper {
+  @apply flex gap-2 items-center;
+
+  & > .newsLetterHeadingIcon {
+    @apply w-8 aspect-square;
+  }
+
+  & > .newsLetterHeading {
+    @apply font-semibold text-green;
+  }
+}
+
+.newsLetterForm {
+  @apply flex gap-4 items-start flex-wrap mt-4;
+
+  & .newsLetterFormIcon {
+    @apply w-6 aspect-square;
+  }
+}

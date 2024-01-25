@@ -1,0 +1,247 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* @font-face {
+  font-family: "roboto-reg";
+  src: url("../../public/fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("../../public/fonts/roboto-regular-webfont.woff") format("woff"),
+    url("../../public/fonts/Roboto-Regular.ttf") format("ttf");
+} */
+
+@layer base {
+  :root {
+    --color-green: 59 93 80;
+    --color-green-light: 220 229 228;
+    --color-yellow: 249 191 41;
+    --color-black: 47 47 47;
+    --color-gray: 106 106 106;
+    --color-white: 255 255 255;
+    --color-offwhite: 240 242 241;
+    --swiper-theme-color: rgba(59 93 80);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  header,
+  footer,
+  section {
+    @apply px-container;
+  }
+
+  section {
+    @apply py-10;
+  }
+
+  body {
+    @apply font-sans overflow-x-hidden text-black ;
+  }
+
+  /* ------------ typography starts ------------ */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mb-2;
+  }
+
+  h1 {
+    @apply text-heading1;
+  }
+  h2 {
+    @apply text-heading2;
+  }
+  h3 {
+    @apply text-heading3;
+  }
+  h4 {
+    @apply text-heading4;
+  }
+  h5 {
+    @apply text-heading5;
+  }
+  h6 {
+    @apply text-heading6;
+  }
+
+  p.subtitle1 {
+    @apply text-subtitle1;
+  }
+  p.subtitle2 {
+    @apply text-subtitle2;
+  }
+  p {
+    @apply text-body2;
+  }
+  p.small,
+  p.caption {
+    @apply text-caption1;
+  }
+  p.sm {
+    @apply text-caption2;
+  }
+  p.large,
+  p.body1 {
+    @apply text-body1;
+  }
+
+  button,
+  a {
+    @apply text-btn;
+  }
+  /* ------------ typography ends ------------ */
+
+  input,
+  textarea,
+  select {
+    @apply block w-full rounded-md border-0 outline-none py-2 px-3 text-gray shadow-sm ring-1 ring-inset ring-gray/30 placeholder:text-gray/40 focus:ring-2 focus:ring-inset focus:ring-green sm:text-sm sm:leading-6;
+  }
+}
+
+@layer utilities {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Works for Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  /* ------------------- hide scrollbar starts ------------------- */
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  /* ------------------- hide scrollbar ends ------------------- */
+}
+
+/* ------------------- swiper ends ------------------- */
+.swiper-pagination-bullet-active {
+  --swiper-pagination-color: rgba(59 93 80);
+}
+.swiper-custom-navigation-btn {
+  @apply max-sm:hidden absolute z-10 top-1/2 w-14 aspect-square bg-green bg-opacity-40 rounded-full text-green hover:bg-opacity-100 hover:text-white duration-300 flex justify-center items-center cursor-pointer;
+}
+/* ------------------- swiper ends ------------------- */
+
+/* @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    @apply -translate-y-2 text-xsmall-regular;
+  }
+
+  input:focus ~ label {
+    @apply left-0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 1px solid #212121;
+    -webkit-text-fill-color: #212121;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+} */
+
+/* @layer components {
+  .content-container {
+    @apply max-w-[1440px] w-full mx-auto px-4;
+  }
+
+  .contrast-btn {
+    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+  }
+
+  .text-xsmall-regular {
+    @apply text-[10px] leading-4 font-normal;
+  }
+
+  .text-small-regular {
+    @apply text-xs leading-5 font-normal;
+  }
+
+  .text-small-semi {
+    @apply text-xs leading-5 font-semibold;
+  }
+
+  .text-base-regular {
+    @apply text-sm leading-6 font-normal;
+  }
+
+  .text-base-semi {
+    @apply text-sm leading-6 font-semibold;
+  }
+
+  .text-large-regular {
+    @apply text-base leading-6 font-normal;
+  }
+
+  .text-large-semi {
+    @apply text-base leading-6 font-semibold;
+  }
+
+  .text-xl-regular {
+    @apply text-2xl leading-[36px] font-normal;
+  }
+
+  .text-xl-semi {
+    @apply text-2xl leading-[36px] font-semibold;
+  }
+
+  .text-2xl-regular {
+    @apply text-[30px] leading-[48px] font-normal;
+  }
+
+  .text-2xl-semi {
+    @apply text-[30px] leading-[48px] font-semibold;
+  }
+
+  .text-heading5-regular {
+    @apply text-[32px] leading-[44px] font-normal;
+  }
+
+  .text-heading5-semi {
+    @apply text-[32px] leading-[44px] font-semibold;
+  }
+} */

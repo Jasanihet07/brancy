@@ -1,0 +1,48 @@
+.deskNav {
+    @apply max-md:hidden flex  h-20 w-full;
+    @apply flex items-center justify-between h-20 w-full;
+
+    &>.logoWrapper {
+        @apply flex items-center;
+
+       
+        }
+
+        & .heading2 {
+            @apply text-white opacity-40 text-heading6 font-semibold m-0;
+        }
+    }
+
+    & .contentWrapper {
+        @apply flex gap-16 items-center;
+
+        &>.navLinks {
+            @apply flex items-center gap-8;
+
+            &>.link {
+                @apply relative text-white opacity-70 hover:opacity-100 w-max pb-1;
+
+                &::before {
+                    content: "";
+                    @apply absolute h-[3px] w-0 left-0 bottom-0 bg-yellow duration-300;
+                }
+
+                &:hover::before {
+                    @apply w-full;
+                }
+            }
+        }
+
+        &>.icons {
+            @apply flex gap-8 px-2  items-center;
+        }
+    }
+
+
+.active {
+    @apply !opacity-100;
+
+    &::before {
+        @apply !w-full;
+    }
+}

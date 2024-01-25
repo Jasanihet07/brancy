@@ -1,0 +1,18 @@
+.service {
+	@apply gap-1;
+	grid-row: span 3;
+	display: grid;
+	grid-template-rows: subgrid;
+
+	& > .icon {
+		@apply relative w-12 aspect-square mb-2;
+		&::after {
+			content: "";
+			@apply absolute bottom-0 -right-[20%] w-2/3 aspect-square bg-green/20 rounded-full -z-10;
+		}
+	}
+
+	& > .serviceDescription {
+		@apply text-caption1 text-gray;
+	}
+}

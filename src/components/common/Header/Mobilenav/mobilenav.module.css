@@ -1,0 +1,70 @@
+.mobileNav {
+    @apply md:hidden flex items-center justify-between h-20 w-full;
+
+    &>.logoWrapper {
+        @apply flex items-center;
+        /* & .heading1 {
+      @apply text-white text-subtitle2 m-0;
+    }
+    & .heading2 {
+      @apply text-white opacity-40 text-subtitle2 m-0;
+    } */
+    }
+
+    &>.icons {
+        @apply flex gap-4 mr-2;
+    }
+}
+
+.blurEffect {
+    @apply fixed inset-0 bg-black/30 backdrop-blur-md z-10;
+}
+
+.sideMenu {
+    @apply fixed inset-0 z-50 flex;
+
+    &>.dialogPanel {
+        @apply relative flex w-2/3 z-[-1] bg-red-300 flex-col overflow-y-scroll pb-4;
+
+        &>.container {
+            @apply flex flex-col px-4 gap-10;
+
+            &>.menuHeader {
+                @apply flex items-center justify-between h-20 bg-red-300;
+
+                & .heading1 {
+                    @apply text-white text-subtitle2 m-0;
+                }
+
+                & .heading2 {
+                    @apply text-white opacity-40 text-subtitle2 m-0;
+                }
+            }
+
+            &>.navLinks {
+                @apply flex flex-col gap-8;
+
+                &>.link {
+                    @apply relative text-black opacity-50 hover:opacity-100 w-max pb-1;
+
+                    &::before {
+                        content: "";
+                        @apply absolute h-[3px] w-0 left-0 bottom-0  duration-300;
+                    }
+
+                    &:hover::before {
+                        @apply w-full;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active {
+    @apply !opacity-100;
+
+    &::before {
+        @apply !w-full;
+    }
+}

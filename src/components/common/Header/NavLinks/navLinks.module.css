@@ -1,0 +1,24 @@
+.navLinks {
+    @apply max-md:hidden flex items-center gap-8;
+
+    &>.link {
+        @apply relative text-gray opacity-70 hover:opacity-100 w-max pb-1 ;
+
+        &::before {
+            content: "";
+            @apply absolute h-[3px] w-0 left-0 bottom-0 duration-300;
+        }
+
+        &:hover::before {
+            @apply w-full;
+        }
+    }
+}
+
+.active {
+    @apply !opacity-100;
+
+    &::before {
+        @apply !w-full;
+    }
+}

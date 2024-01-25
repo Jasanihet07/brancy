@@ -1,0 +1,9 @@
+.form {
+  @apply flex flex-col gap-8;
+  & > .formInput {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4;
+    & > .nameInput {
+      @apply grid sm:grid-cols-2 sm:col-span-2 gap-4;
+    }
+  }
+}

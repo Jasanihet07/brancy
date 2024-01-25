@@ -1,0 +1,9 @@
+.prose {
+  & > * {
+    @apply text-body2;
+  }
+
+  & > ul {
+    @apply list-disc list-inside;
+  }
+}

@@ -1,0 +1,34 @@
+.gridSection {
+    @apply grid md:grid-cols-[40%_1fr] bg-green grid-cols-1 gap-4 items-center select-none min-h-[20vw];
+
+    &>.contentWrapper {
+        @apply flex flex-col gap-4;
+
+        &>.content {
+            @apply flex flex-col;
+
+            &>.heading {
+                @apply text-white font-bold;
+            }
+
+            &>.description {
+                @apply text-white text-opacity-70 text-caption1;
+            }
+        }
+
+        &>.bannerButtons {
+            @apply flex gap-4;
+        }
+    }
+
+    &>.backgroundBannerImage {
+        @apply relative w-full aspect-[16/9];
+
+        &::after {
+            content: url("/icons/dots-light.svg");
+            position: absolute;
+
+            @apply aspect-square w-[30%] top-5 right-5;
+        }
+    }
+}

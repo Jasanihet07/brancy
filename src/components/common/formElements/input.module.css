@@ -1,0 +1,5 @@
+.inputGroup {
+  & .label {
+    @apply block font-medium capitalize leading-6 mb-2;
+  }
+}

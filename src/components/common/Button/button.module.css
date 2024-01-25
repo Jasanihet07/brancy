@@ -1,0 +1,57 @@
+.btn {
+    @apply px-6 py-2 rounded-md flex justify-center font-semibold items-center gap-2 disabled:bg-opacity-20 disabled:hover:opacity-60 whitespace-nowrap;
+    transition: transform 300ms ease, background-color 300ms ease;
+    transform-style: preserve-3d;
+
+    &:hover {
+        transform: scale3d(0.96, 0.96, 1.01);
+    }
+
+    &--fill {
+        @apply bg-opacity-100 text-white;
+    }
+
+    &--green {
+        @apply bg-green border-green;
+    }
+
+    &--yellow {
+        @apply bg-yellow border-yellow text-black;
+    }
+
+    &--black {
+        @apply bg-black border-black;
+    }
+
+    &--outlined {
+        @apply bg-transparent border-2;
+
+        &.btn--light {
+            @apply text-white border-white border-opacity-30;
+        }
+
+        &.btn--dark {
+            @apply text-green border-green border-opacity-30;
+        }
+
+        &:hover {
+            @apply border-opacity-100;
+        }
+    }
+
+    &--round {
+        @apply p-2 h-full aspect-square rounded-full;
+
+        &.btn--green {
+            @apply bg-green bg-opacity-20 text-green hover:text-white hover:bg-opacity-100;
+        }
+
+        &.btn--black {
+            @apply bg-black text-white;
+        }
+    }
+
+    &--icon {
+        @apply aspect-square px-0 py-0;
+    }
+}

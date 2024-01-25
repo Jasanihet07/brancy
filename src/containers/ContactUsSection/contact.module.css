@@ -1,0 +1,6 @@
+.contactContainer {
+  @apply py-12 flex flex-col gap-16 max-w-4xl mx-auto;
+  & > .contactDetailWrapper {
+    @apply flex justify-between flex-wrap gap-4;
+  }
+}

@@ -1,0 +1,13 @@
+.mainwrapper {
+  & > .image_group {
+    @apply mt-5;
+  }
+
+  & > .main_image {
+    @apply max-w-[1024px] min-w-[200px] w-full bg-white mx-auto shadow-md rounded-xl relative aspect-[4/3];
+
+    & .slide {
+      @apply w-full relative aspect-[16/9];
+    }
+  }
+}
